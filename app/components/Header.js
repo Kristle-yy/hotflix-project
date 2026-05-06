@@ -1,24 +1,32 @@
-import React from "react";
-import "../globals.css";
+import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="navbar">
+    <header className="header">
+
       <div className="logo">
         HOT<span>FLIX</span>
       </div>
 
       <nav className="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Catalog</a>
-        <a href="#">Pricing Plan</a>
-        <a href="#">Pages</a>
+        <Link href="/">Home</Link>
+        <Link href="/about">About</Link>
+        <Link href="/teams">Teams</Link>
       </nav>
 
-      <div className="nav-right">
-        <input type="text" placeholder="Search..." />
-        <button className="nickname-btn">NICKNAME</button>
+      <div className="header-right">
+
+        <div className="search-box">
+          <input type="text" placeholder="Search movies..." />
+          <span className="search-icon">⌕</span>
+        </div>
+
+        <button className="profile-btn">
+          My List
+        </button>
+
       </div>
+
     </header>
   );
 };

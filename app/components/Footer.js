@@ -1,27 +1,39 @@
-import "../globals.css";
+import Link from "next/link";
 
 const Footer = () => {
   return (
     <footer className="footer">
+
       <div className="footer-left">
-        <div className="logo">
+
+        <div className="footer-logo">
           HOT<span>FLIX</span>
         </div>
 
-        <div className="copyright">
-          <p>© HOTFLIX</p>
-          <p>
-            Create by <span className="author">HOTFLIX</span>
-          </p>
-        </div>
-      </div>
-      <div className="footer-right">
-        <a href="#">About Us</a>
-        <a href="#">Contacts</a>
-        <a href="#">Privacy policy</a>
+        <p>© HOTFLIX 2026</p>
 
-        <button className="scroll-top">↑</button>
+        <p>Create by HOTFLIX</p>
+
       </div>
+
+      <div className="footer-right">
+
+        <div className="footer-links">
+
+          <Link href="/">About Us</Link>
+
+          <Link href="/">Contacts</Link>
+
+          <Link href="/">Privacy Policy</Link>
+
+        </div>
+
+        <button className="scroll-top">
+          ↑
+        </button>
+
+      </div>
+
     </footer>
   );
 };

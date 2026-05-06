@@ -1,17 +1,30 @@
 import Link from "next/link";
 
-export default function Login() {
+const LoginPage = () => {
   return (
     <div className="auth-container">
+
       <div className="auth-card">
 
-        <h1 className="logo">
+        {/* LOGO */}
+        <h1 className="auth-logo">
           HOT<span>FLIX</span>
         </h1>
 
+        {/* TITLE */}
+        <h2 className="auth-title">
+          Welcome Back
+        </h2>
+
+        <p className="auth-subtitle">
+          Sign in to continue watching movies
+        </p>
+
+        {/* FORM */}
+
         <input
           type="email"
-          placeholder="Email"
+          placeholder="Email Address"
           className="auth-input"
         />
 
@@ -21,19 +34,38 @@ export default function Login() {
           className="auth-input"
         />
 
-        <label className="auth-checkbox">
-          <input type="checkbox" />
-          <span>Remember Me</span>
-        </label>
+        {/* CHECKBOX */}
 
-        <button className="auth-btn">SIGN IN</button>
+        <div className="auth-checkbox">
+
+          <input type="checkbox" />
+
+          <label>
+            Remember Me
+          </label>
+
+        </div>
+
+        {/* BUTTON */}
+
+        <button className="auth-btn">
+          SIGN IN
+        </button>
+
+        {/* LINK */}
 
         <p className="auth-text">
-          Don't have an account?{" "}
-          <Link href="/signup">Sign up!</Link>
+          Don’t have an account?{" "}
+
+          <Link href="/signup">
+            Sign Up
+          </Link>
         </p>
 
       </div>
+
     </div>
   );
-}
+};
+
+export default LoginPage;

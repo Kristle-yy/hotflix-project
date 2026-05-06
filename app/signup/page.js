@@ -1,23 +1,36 @@
 import Link from "next/link";
 
-export default function Signup() {
+const SignupPage = () => {
   return (
     <div className="auth-container">
+
       <div className="auth-card">
 
-        <h1 className="logo">
+        {/* LOGO */}
+        <h1 className="auth-logo">
           HOT<span>FLIX</span>
         </h1>
 
+        {/* TITLE */}
+        <h2 className="auth-title">
+          Create Account
+        </h2>
+
+        <p className="auth-subtitle">
+          Join HotFlix and enjoy unlimited movies
+        </p>
+
+        {/* FORM */}
+
         <input
           type="text"
-          placeholder="Name"
+          placeholder="Full Name"
           className="auth-input"
         />
 
         <input
           type="email"
-          placeholder="Email"
+          placeholder="Email Address"
           className="auth-input"
         />
 
@@ -27,24 +40,44 @@ export default function Signup() {
           className="auth-input"
         />
 
-        <label className="auth-checkbox">
-          <input type="checkbox" />
-          <span>
-            I agree to the{" "}
-            <span style={{ color: "#ff9900" }}>
-              Privacy Policy
-            </span>
-          </span>
-        </label>
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          className="auth-input"
+        />
 
-        <button className="auth-btn">SIGN UP</button>
+        {/* CHECKBOX */}
+
+        <div className="auth-checkbox">
+
+          <input type="checkbox" />
+
+          <label>
+            I agree to the Terms & Conditions
+          </label>
+
+        </div>
+
+        {/* BUTTON */}
+
+        <button className="auth-btn">
+          CREATE ACCOUNT
+        </button>
+
+        {/* LINK */}
 
         <p className="auth-text">
           Already have an account?{" "}
-          <Link href="/login">Sign in!</Link>
+
+          <Link href="/login">
+            Sign In
+          </Link>
         </p>
 
       </div>
+
     </div>
   );
-}
+};
+
+export default SignupPage;

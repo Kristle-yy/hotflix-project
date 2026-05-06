@@ -1,14 +1,14 @@
 import Header from "./components/Header";
-import Footer from "./components/Footer";
 import Hero from "./components/Hero";
-import FilterBar from "./components/FilterBar";
+import MovieSection from "./components/MovieSection";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
     <>
       <Header />
       <Hero />
-      <FilterBar />
+      <MovieSection />
       <Footer />
     </>
   );

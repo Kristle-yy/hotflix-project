@@ -7,66 +7,80 @@ const slides = [
   {
     title: "Captain Marvel",
     rating: "6.9",
-    desc: "KDHIUGDOLSKH",
+    desc: "A hero rises to protect the universe from powerful enemies.",
     genre: "Adventure",
     image: "/Hero1.png",
   },
+
   {
     title: "The Avengers",
     rating: "7.5",
-    desc: "A hero emerges from shadows to fight corruption and fear.",
+    desc: "Earth's mightiest heroes unite to save the world.",
     genre: "Action, Drama",
-    image: "/Hero2.png", 
+    image: "/Hero2.png",
   },
 ];
 
 const Hero = () => {
-  const [index, setIndex] = useState(0);
 
-  // auto slide
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // AUTO SLIDE
   useEffect(() => {
+
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % slides.length);
-    }, 4000);
+
+      setCurrentSlide((prev) =>
+        prev === slides.length - 1 ? 0 : prev + 1
+      );
+
+    }, 3000);
 
     return () => clearInterval(interval);
+
   }, []);
-
-  const nextSlide = () => {
-    setIndex((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setIndex((prev) => (prev - 1 + slides.length) % slides.length);
-  };
 
   return (
     <section
       className="hero"
-      style={{ backgroundImage: `url(${slides[index].image})` }}
+      style={{
+        backgroundImage: `url(${slides[currentSlide].image})`,
+      }}
     >
       <div className="overlay"></div>
 
       <div className="hero-content">
+
+        <span className="movie-tag">
+          NEW RELEASE
+        </span>
+
         <h1>
-          {slides[index].title}
-          <span className="rating">{slides[index].rating}</span>
+          {slides[currentSlide].title}
         </h1>
 
-        <p>{slides[index].desc}</p>
-        <p className="genre">{slides[index].genre}</p>
+        <div className="rating">
+          {slides[currentSlide].rating}
+        </div>
 
-        <button className="watch-btn">WATCH NOW</button>
+        <p>
+          {slides[currentSlide].desc}
+        </p>
+
+        <h3 className="genre">
+          {slides[currentSlide].genre}
+        </h3>
+
+        <div className="hero-buttons">
+
+          <button className="watch-btn">
+            Watch Now
+          </button>
+
+
+        </div>
+
       </div>
-
-      {/* arrows */}
-      <button className="arrow left" onClick={prevSlide}>
-        ❮
-      </button>
-
-      <button className="arrow right" onClick={nextSlide}>
-        ❯
-      </button>
     </section>
   );
 };
